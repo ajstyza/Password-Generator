@@ -7,16 +7,26 @@ if(numbers){
 }
 */
 var passwordLength =  126
-var characterTypes = ["0" "1" "2" "3" "4" "5" "6" "7" "8" "9"];
-var specialCharacters = ["!" "@" "#" "$" "%" "&" "*"];
-//
+var numbers= ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var specialCharacters = ["!", "@", "#", "$", "%", "&", "*"];
 
 window.prompt("Select password length between 8 and 126 characters");
-if 
-
-window.prompt("select character types: numbers and/or letters");
-window.prompt("Would you like to include uppercase, lowercasae, numeric, and symbols?") 
-
+window.prompt("include numbers and letters?");
+  let inputs = '';
+    function getInputValues() {
+      if(numbers) {
+        return numbers
+      }
+      else if(letters) {
+        return letters
+      }
+      else
+        return letters + numbers
+      }
+  
+window.prompt("Yes or no, would you like to include uppercase, lowercasae, numeric, and symbols?") 
+  If 
 
 /* Get references to the #generate element
 var generateBtn = document.querySelector("#generate"); // this line creates a variable with a value fetched from html page using queryselector + the id
