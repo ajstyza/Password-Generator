@@ -10,8 +10,8 @@ var numbers= ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var upperCase = ["A", "B", "C", "D", "E", "F", "G","H", "I", "J", "k", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var specialCharacters = ["!", "@", "#", "$", "%", "&", "*"];
-//
-var Length = confirm("Select password length between 8 and 126 characters");
+// I want to call these variables for each prompt, so use var hasSpecial characters = confirm ('click ok')
+var Length = confirm("Password length must be between 8 and 126 characters");
 var lettersNumbers = confirm("Include numbers and letters?");
 var Symbols = confirm("Include uppercase, lowercasae, numeric, and symbols?");
     
@@ -20,23 +20,29 @@ function getInputValues() {
       if (passwordLength >= 8 && passwordLength <= 126) {
         PasswordArray.concat(passwordLength)
       }
-    }
-    console.log(passwordLength)
-      /*
       else if(numbers) {
-        PasswordArray.concat(numbers)
+        PasswordArray.concat(numbers + passwordLength)
       }
       else if(letters) {
-        PasswordArray.concat(letters) 
+        PasswordArray.concat(letters + numbers) 
         }
       else if(upperCase) {
-        PasswordArray.concat(upperCase)
+        PasswordArray.concat(upperCase + letters + numbers)
       }
       else {
         PasswordArray
       }
+
+      for (let i = 0; i < PasswordArray.length; i++) {
+        const element = PasswordArray[i];
+        // math.random 
     }
+    return PasswordArray.join("");
   
+  }
+  
+
+    /*
     
  //for loop function all data, then script math.random & math.floor to return randomized character array
     for (let index = 0; index < array.length; index++) {
@@ -45,7 +51,10 @@ function getInputValues() {
 
       return PasswordArray
     }
+
+
 // Get references to the #generate element
+
 var generateBtn = document.querySelector("#generate"); // this line creates a variable with a value fetched from html page using queryselector + the id
 getInputValues()
 
@@ -56,13 +65,11 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
+/*
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword) 
  
  // this is only happening when I refresh the page. I might need to override default behavior of AP
 function generateBtn(event) {
 let generateBtn = event;
-generateBtn.preventDefault();
-
-}
+generateBtn.preventDefault(); */
