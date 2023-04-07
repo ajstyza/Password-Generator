@@ -9,7 +9,7 @@ var specialCharacters = ["!", "@", "#", "$", "%", "&", "*"];
 function generatePassword() {
   var password = ""
   // ask user length of password
-  var passwordLength = prompt("What's the length of password you");
+  var passwordLength = prompt("How long would you like your password, pick between 8-126 characters");
   passwordLength= parseInt(passwordLength);
 
   // check length -  if not valid stop
@@ -17,7 +17,6 @@ function generatePassword() {
     // stop 
     return;
   }
-
   // valid length
   var wantUppercase = confirm("Include uppercase?");
   // YES / NO
@@ -37,7 +36,7 @@ function generatePassword() {
   if (specialCharacters) {
     PasswordArray = PasswordArray.concat(specialCharacters)
   }
-  
+
       for (let i = 0; i < passwordLength; i++) {
 
         var rnum = Math.floor(Math.random() * PasswordArray.length);
