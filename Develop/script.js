@@ -11,19 +11,13 @@ function generatePassword() {
   // ask user length of password
   var passwordLength = prompt("How long would you like your password, pick between 8-126 characters");
   passwordLength= parseInt(passwordLength);
-
-  // check length -  if not valid stop
   if (passwordLength < 8 || passwordLength > 126) {
-    // stop 
     return;
   }
-  // valid length
   var wantUppercase = confirm("Include uppercase?");
-  // YES / NO
   if (wantUppercase) {
     PasswordArray = PasswordArray.concat(upperCase)
   }
-  
   var wantLowercase = confirm("Include lowercasae?");
   if (wantLowercase) {
     PasswordArray = PasswordArray.concat(letters)
@@ -52,7 +46,7 @@ function generatePassword() {
 // Get references to the #generate element
 
 var generateBtn = document.querySelector("#generate"); // this line creates a variable with a value fetched from html page using queryselector + the id
-//writePassword()
+
 
 // Write password to the #password input
 function writePassword(event) {
@@ -63,11 +57,5 @@ function writePassword(event) {
 
 }
 
-// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword) 
  
- // this is only happening when I refresh the page. I might need to override default behavior of API
-// function generateBtn(event) {
-// let generateBtn = event;
-// generateBtn.preventDefault(); 
-// }
